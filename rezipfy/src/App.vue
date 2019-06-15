@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header />
-    <invite />
-    <SearchBox class="search-box"/>
+    <invite v-if="view === 'default'"/>
+    <SearchBox v-if="view === 'default'" class="search-box"/>
+    <About v-if="view === 'about'" class="search-box"/>
     <Footer class="footer"/>
   </div>
 </template>
@@ -10,6 +11,7 @@
 <script>
 import Header from './components/Header.vue'
 import Invite from './components/Invite.vue'
+import About from './components/About.vue'
 import Footer from './components/Footer.vue'
 import SearchBox from './components/SearchBox.vue'
 
@@ -18,8 +20,14 @@ export default {
   components: {
     Header,
     Invite,
+    About,
     Footer,
     SearchBox
+  },
+  data: function() {
+    return {
+      view: 'about'
+    }
   }
 }
 </script>
@@ -46,5 +54,9 @@ body, html {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+a {
+  color: #495057 !important;
 }
 </style>

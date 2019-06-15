@@ -1,27 +1,22 @@
 <template>
   <div>
     <Header />
-    <invite />
-    <SearchBox  class="search-box"/>
+    <About  class="search-box"/>
     <Footer class="footer"/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Invite from './components/Invite.vue'
 import About from './components/About.vue'
 import Footer from './components/Footer.vue'
-import SearchBox from './components/SearchBox.vue'
 
 export default {
-  name: 'app',
+  name: 'about',
   components: {
     Header,
-    Invite,
     About,
-    Footer,
-    SearchBox
+    Footer
   }
 }
 </script>
